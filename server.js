@@ -34,7 +34,30 @@ app.post("/send-email", async (req, res) => {
       to: email,
       subject: "Send mail",
       html: `
-        <h1 style="color:red;">${text}</h1>
+            <div style="font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center" style="padding: 20px;">
+        <div style="max-width: 600px; background: white; border: 1px solid #e0e0e0; border-radius: 8px;">
+          <!-- Заголовок -->
+          <div style="background: #f8f8f8; padding: 20px; text-align: center; border-bottom: 1px solid #e0e0e0;">
+            <h1 style="color: red; margin: 0; font-size: 24px;">${text}</h1>
+          </div>
+          <!-- Контент -->
+          <div style="padding: 30px;">
+            <p>Ваше действие было успешно выполнено.</p>
+            <p>Если у вас возникли вопросы, свяжитесь с нашей службой поддержки.</p>
+          </div>
+          <!-- Футер -->
+          <div style="background: #f8f8f8; padding: 15px; text-align: center; font-size: 12px; color: #999;">
+            © 2024 Ваша Компания. Все права защищены.
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
         `,
     });
 
@@ -52,6 +75,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(4444, () => {
+app.listen(3000, () => {
   console.log("server stared");
 });
